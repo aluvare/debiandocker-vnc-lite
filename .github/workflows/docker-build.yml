@@ -6,6 +6,9 @@ jobs:
   push_to_registry:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Install QEMU
         uses: docker/setup-qemu-action@v1
