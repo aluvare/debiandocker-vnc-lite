@@ -60,7 +60,7 @@ COPY --from=debian-arm64-builder /usr/bin/wireguard-go /usr/bin/wg* /usr/bin/
 
 FROM debian-${TARGETARCH} AS final
 RUN DEBIAN_FRONTEND=noninteractive apt update
-RUN DEBIAN_FRONTEND=noninteractive apt -y install xfce4 supervisor jq curl chromium vim sudo tigervnc-standalone-server dbus-x11 docker.io
+RUN DEBIAN_FRONTEND=noninteractive apt -y install xfce4 supervisor jq curl chromium vim sudo tigervnc-standalone-server dbus-x11 docker.io iproute2
 
 RUN adduser --disabled-password --gecos '' user
 RUN usermod -a -G sudo,docker user
